@@ -6,4 +6,3 @@ gunicorn==22.0.0
 matplotlib
 scikit-learn
 opencv-python
-web: gunicorn app:app
