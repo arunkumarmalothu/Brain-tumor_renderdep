@@ -2,6 +2,7 @@ Flask
 tensorflow
 numpy
 Pillow
+gunicorn
 pandas
 matplotlib
 scikit-learn
