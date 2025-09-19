@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor MRI Classification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">Brain Tumor Classifier</h1>
+        
+        <p class="text-gray-600 mb-6">Upload an MRI scan image (JPG, PNG) to predict if a tumor is present and its type.</p>
+
+        <form action="/predict" method="post" enctype="multipart/form-data" class="space-y-6">
+            <div class="flex items-center justify-center">
+                <label for="file-upload" class="cursor-pointer bg-blue-500 text-white font-semibold py-2 px-4 rounded-full border border-blue-600 hover:bg-blue-600 transition-colors duration-200">
+                    Choose Image
+                </label>
+                <input id="file-upload" name="file" type="file" required class="hidden" onchange="document.getElementById('file-name').textContent = this.files[0].name;">
+            </div>
+            <span id="file-name" class="text-sm text-gray-500">No file chosen</span>
+
+            <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-full hover:bg-green-600 transition-colors duration-200 shadow-md">
+                Predict
+            </button>
+        </form>
+
+        <div class="mt-8 p-4 bg-gray-100 rounded-lg border border-gray-200">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Prediction Result:</h2>
+            <p class="text-2xl font-extrabold text-green-700" id="prediction-result">{{ prediction_text }}</p>
+        </div>
+    </div>
+
+</body>
+</html>
