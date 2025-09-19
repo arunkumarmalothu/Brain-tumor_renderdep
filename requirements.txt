@@ -2,7 +2,7 @@ Flask==3.0.3
 tensorflow
 numpy==1.26.4
 Pillow==10.3.0
-gunicorn==22.0.0
+pandas
 matplotlib
 scikit-learn
 opencv-python
